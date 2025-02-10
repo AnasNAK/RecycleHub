@@ -11,7 +11,7 @@
       "phone": "0601992205",
       "dateOfBirth": "1990-01-01",
       "role": "collector",
-      "points": 0,
+      "points": 6,
       "isActive": true
     },
     {
@@ -50,11 +50,53 @@
       "password": "anasnakhli",
       "phone": "0601992205",
       "address": "N10 ,Bloc 40 ,Qu Riyad",
-      "city": "SAFI",
+      "city": "safi",
       "dateOfBirth": "2025-02-14",
       "role": "user",
       "isActive": true,
       "points": 0
+    },
+    {
+      "id": "40fc",
+      "firstName": "Samantha",
+      "lastName": "Ball",
+      "email": "fujixo@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (802) 534-5453",
+      "address": "Sed esse optio aut",
+      "city": "safi",
+      "dateOfBirth": "2022-05-01",
+      "role": "user",
+      "points": 0,
+      "isActive": true
+    },
+    {
+      "id": "26d5",
+      "firstName": "Zelda",
+      "lastName": "Booker",
+      "email": "pubuhyp@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (699) 613-8428",
+      "address": "Officia mollitia non",
+      "city": "Sed dolor fugit est",
+      "dateOfBirth": "1989-06-14",
+      "role": "user",
+      "points": 0,
+      "isActive": true
+    },
+    {
+      "id": "ec85",
+      "firstName": "ahmed",
+      "lastName": "Conrad",
+      "email": "vofoxe@gmail.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (489) 955-6481",
+      "address": "Sed beatae labore do",
+      "city": "casa",
+      "dateOfBirth": "1995-12-24",
+      "role": "user",
+      "points": 0,
+      "isActive": true
     }
   ],
   "collections": [
@@ -73,7 +115,7 @@
       "collectionDate": "2015-07-01",
       "timeSlot": "11:00",
       "notes": "Qui ab eius ea conse",
-      "status": "occupied",
+      "status": "completed",
       "createdAt": "2025-02-10T00:58:38.216Z",
       "updatedAt": "2025-02-10T00:58:38.216Z",
       "collectorId": "1"
@@ -97,7 +139,7 @@
       "collectionDate": "1999-10-17",
       "timeSlot": "15:00",
       "notes": "Iure in saepe culpa",
-      "status": "pending",
+      "status": "completed",
       "createdAt": "2025-02-10T01:02:15.959Z",
       "updatedAt": "2025-02-10T01:02:15.959Z"
     },
@@ -116,7 +158,7 @@
       "collectionDate": "1980-07-23",
       "timeSlot": "10:00",
       "notes": "Ipsa ut culpa et id",
-      "status": "occupied",
+      "status": "completed",
       "createdAt": "2025-02-10T01:03:19.832Z",
       "updatedAt": "2025-02-10T01:03:19.832Z",
       "collectorId": "69ae"
@@ -140,6 +182,170 @@
       "createdAt": "2025-02-10T01:27:31.376Z",
       "updatedAt": "2025-02-10T01:27:31.376Z",
       "collectorId": "1"
+    },
+    {
+      "id": "7bc7",
+      "userId": "69ae",
+      "materials": [
+        {
+          "type": "plastic",
+          "weight": 1
+        },
+        {
+          "type": "glass",
+          "weight": 4
+        },
+        {
+          "type": "paper",
+          "weight": 4
+        },
+        {
+          "type": "metal",
+          "weight": 1
+        }
+      ],
+      "totalWeight": 10,
+      "address": "Dolorem qui veniam ",
+      "city": "SAFI",
+      "collectionDate": "2010-04-04",
+      "timeSlot": "15:00",
+      "notes": "Necessitatibus rem q",
+      "status": "pending",
+      "createdAt": "2025-02-10T05:56:22.906Z",
+      "updatedAt": "2025-02-10T05:56:22.906Z",
+      "type": "plastic",
+      "weight": 1
+    },
+    {
+      "id": "9fb9",
+      "userId": "26d5",
+      "materials": [
+        {
+          "type": "plastic",
+          "weight": 10
+        }
+      ],
+      "totalWeight": 10,
+      "address": "Et autem consequat ",
+      "city": "Sed dolor fugit est",
+      "collectionDate": "2018-06-15",
+      "timeSlot": "15:00",
+      "notes": "Deleniti autem dolor",
+      "status": "pending",
+      "createdAt": "2025-02-10T06:08:44.522Z",
+      "updatedAt": "2025-02-10T06:08:44.522Z",
+      "type": "plastic",
+      "weight": 10
+    },
+    {
+      "id": "8da0",
+      "userId": "40fc",
+      "materials": [
+        {
+          "type": "glass",
+          "weight": 10
+        }
+      ],
+      "totalWeight": 10,
+      "address": "Sit minima ut nesciu",
+      "city": "In atque at rerum vo",
+      "collectionDate": "1996-11-16",
+      "timeSlot": "12:00",
+      "notes": "Eos quod dolor ipsum",
+      "status": "pending",
+      "createdAt": "2025-02-10T06:15:54.346Z",
+      "updatedAt": "2025-02-10T06:15:54.346Z",
+      "type": "glass",
+      "weight": 10
+    },
+    {
+      "id": "071a",
+      "userId": "40fc",
+      "materials": [
+        {
+          "type": "glass",
+          "weight": 9
+        }
+      ],
+      "totalWeight": 9,
+      "address": "Veniam est ipsum q",
+      "city": "safi",
+      "collectionDate": "1980-08-05",
+      "timeSlot": "13:00",
+      "notes": "Non nisi dolor est c",
+      "status": "pending",
+      "createdAt": "2025-02-10T06:17:48.594Z",
+      "updatedAt": "2025-02-10T06:17:48.594Z",
+      "type": "glass",
+      "weight": 9
+    },
+    {
+      "id": "a709",
+      "userId": "69ae",
+      "materials": [
+        {
+          "type": "metal",
+          "weight": 5
+        }
+      ],
+      "totalWeight": 5,
+      "address": "Sunt ea aliquam solu",
+      "city": "safi",
+      "collectionDate": "2024-07-24",
+      "timeSlot": "15:00",
+      "notes": "Magni ad deserunt be",
+      "status": "pending",
+      "createdAt": "2025-02-10T06:21:17.475Z",
+      "updatedAt": "2025-02-10T06:21:17.475Z",
+      "type": "metal",
+      "weight": 5
+    },
+    {
+      "id": "7264",
+      "userId": "69ae",
+      "materials": [
+        {
+          "type": "glass",
+          "weight": 1.2
+        }
+      ],
+      "totalWeight": 1.2,
+      "address": "tfcgv",
+      "city": "safi",
+      "collectionDate": "2025-02-10",
+      "timeSlot": "11:00",
+      "notes": "dtrfygubh",
+      "status": "occupied",
+      "createdAt": "2025-02-10T06:33:02.211Z",
+      "updatedAt": "2025-02-10T06:33:02.211Z",
+      "type": "glass",
+      "weight": 1.2,
+      "collectorId": "1"
+    },
+    {
+      "id": "fb6b",
+      "userId": "ec85",
+      "materials": [
+        {
+          "type": "plastic",
+          "weight": 8
+        },
+        {
+          "type": "glass",
+          "weight": 1
+        }
+      ],
+      "totalWeight": 9,
+      "address": "riyad",
+      "city": "casa",
+      "collectionDate": "2025-02-10",
+      "timeSlot": "09:00",
+      "notes": "test ",
+      "status": "pending",
+      "createdAt": "2025-02-10T08:12:21.568Z",
+      "updatedAt": "2025-02-10T08:12:21.568Z",
+      "type": "plastic",
+      "weight": 8
     }
   ],
   "points_transactions": [],

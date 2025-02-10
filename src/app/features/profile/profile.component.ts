@@ -7,12 +7,11 @@ import { NotificationService } from '../../core/services/notification.service';
 import { User } from '../../core/models/user.interface';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, IconComponent, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule, IconComponent],
   template: `
     <div class="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <!-- Back Button -->

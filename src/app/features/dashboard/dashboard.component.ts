@@ -13,7 +13,6 @@ import { IconComponent } from '../../shared/components/icons.component';
   imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent],
   template: `
     <div class="min-h-screen bg-gray-50">
-      <!-- Secondary Navigation -->
       <nav class="bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between h-16">
@@ -35,18 +34,6 @@ import { IconComponent } from '../../shared/components/icons.component';
               }
             </div>
 
-            <!-- Action Button -->
-            @if (user?.role !== 'collector') {
-              <div class="flex items-center">
-                <a routerLink="/collections/new"
-                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
-                          text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 
-                          focus:ring-offset-2 focus:ring-primary transition-colors shadow-sm hover:shadow-glow">
-                  <app-icon name="plus" class="h-4 w-4 mr-2"></app-icon>
-                  New Collection
-                </a>
-              </div>
-            }
           </div>
         </div>
       </nav>

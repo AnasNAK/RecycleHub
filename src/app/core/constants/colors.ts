@@ -1,8 +1,8 @@
 export const COLORS = {
   primary: {
-    light: '#4ADE80',  // Light green
-    DEFAULT: '#22C55E', // Main green
-    dark: '#16A34A',   // Dark green
+    light: '#4ADE80',  
+    DEFAULT: '#22C55E',
+    dark: '#16A34A',   
   },
   dark: {
     light: '#374151',

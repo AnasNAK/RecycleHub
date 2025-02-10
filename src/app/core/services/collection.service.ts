@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Collection } from '../models/collection.interface';
 import { DatabaseService } from './database.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class CollectionService {
 
   constructor(
     private http: HttpClient,
-    private dbService: DatabaseService
+    private dbService: DatabaseService,
+    private authService: AuthService
   ) {}
 
   getUserCollections(userId: string): Observable<Collection[]> {
@@ -28,7 +30,13 @@ export class CollectionService {
   }
 
   getCollectionsByCity(city: string): Observable<Collection[]> {
-    return this.dbService.getCollectionsByCity(city);
+    return this.http.get<Collection[]>(`${this.apiUrl}/collections`).pipe(
+      map(collections => collections.filter(
+        collection => 
+          collection.city.toLowerCase() === city.toLowerCase() && 
+          !collection.collectorId // Only show unassigned collections
+      ))
+    );
   }
 
   deleteCollection(id: number): Observable<void> {
@@ -37,5 +45,18 @@ export class CollectionService {
 
   getAllCollections(): Observable<Collection[]> {
     return this.http.get<Collection[]>(`${this.apiUrl}/collections`);
+  }
+
+  acceptCollection(collectionId: string): Observable<any> {
+    return this.authService.currentUser$.pipe(
+      map(user => {
+        if (!user) throw new Error('No authenticated user');
+        
+        return this.http.patch(`${this.apiUrl}/${collectionId}`, {
+          status: 'occupied',
+          collectorId: user.id
+        });
+      })
+    );
   }
 } 

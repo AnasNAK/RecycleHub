@@ -5,6 +5,7 @@ import { AuthService } from '../../core/services/auth.service';
 import { Collection } from '../../core/models/collection.interface';
 import { IconComponent } from '../../shared/components/icons.component';
 import { NotificationService } from '../../core/services/notification.service';
+import { switchMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-available-collections',
@@ -124,12 +125,19 @@ export class AvailableCollectionsComponent implements OnInit {
   }
 
   private loadAvailableCollections(): void {
-    // Get all collections for collectors, not just their city
-    this.collectionService.getAllCollections().subscribe({
+    this.authService.currentUser$.pipe(
+      switchMap(user => {
+        if (!user?.city) return [];
+        return this.collectionService.getAllCollections().pipe(
+          map(collections => collections.filter(collection => 
+            collection.city.toLowerCase() === user.city.toLowerCase() &&
+            (this.currentFilter === 'all' || collection.status === this.currentFilter)
+          ))
+        );
+      })
+    ).subscribe({
       next: (collections) => {
-        this.collections = this.currentFilter === 'all' 
-          ? collections
-          : collections.filter(c => c.status === this.currentFilter);
+        this.collections = collections;
       }
     });
   }

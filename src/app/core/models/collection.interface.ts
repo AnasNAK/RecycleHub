@@ -2,7 +2,7 @@ export interface Collection {
   id?: string;
   userId: string;
   materials: {
-    type: string;
+    type: 'Plastique' | 'Verre' | 'Papier' | 'Métal';
     weight: number;
     photos?: string[];
   }[];
@@ -18,6 +18,8 @@ export interface Collection {
   actualWeight?: number;
   createdAt: string;
   updatedAt: string;
+  type: 'Plastique' | 'Verre' | 'Papier' | 'Métal';
+  weight: number;
 }
 
 export type CollectionStatus = 'pending' | 'occupied' | 'in_progress' | 'completed' | 'rejected'; 

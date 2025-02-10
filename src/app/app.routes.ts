@@ -2,6 +2,10 @@ import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { collectorGuard } from './core/guards/collector.guard';
 import { MainLayoutComponent } from './shared/components/main-layout.component';
+import { AuthComponent } from './features/auth/auth.component';
+import { LoginComponent } from './features/auth/login/login.component';
+import { RegisterComponent } from './features/auth/register/register.component';
+import { noAuthGuard } from './core/guards/noAuth.guard';
 
 export const routes: Routes = [
   {
@@ -14,7 +18,14 @@ export const routes: Routes = [
       },
       {
         path: 'auth',
-        loadComponent: () => import('./features/auth/auth.component').then(m => m.AuthComponent)
+        component: AuthComponent,
+
+        canActivate: [noAuthGuard],
+        children: [
+          { path: '', redirectTo: 'login', pathMatch: 'full' },
+          { path: 'login', component: LoginComponent },
+          { path: 'register', component: RegisterComponent }
+        ]
       },
       {
         path: '',

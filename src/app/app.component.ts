@@ -6,10 +6,8 @@ import { NotificationComponent } from './shared/components/notification.componen
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NotificationComponent],
-  template: `
-    <app-notification></app-notification>
-    <router-outlet></router-outlet>
-  `
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'RecycleHub';

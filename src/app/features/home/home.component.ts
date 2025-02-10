@@ -1,141 +1,165 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from '../../shared/components/icons.component';
-import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, IconComponent],
+  imports: [CommonModule, RouterLink],
   template: `
-    <!-- Hero Section -->
-    <div class="relative bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div class="sm:text-center lg:text-left">
-              <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span class="block">Make recycling</span>
-                <span class="block text-primary">rewarding & easy</span>
-              </h1>
-              <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Join our community of eco-conscious individuals and make a difference. 
-                Earn rewards for your recycling efforts and help create a sustainable future.
-              </p>
-              <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                @if (!(isAuthenticated$ | async)) {
-                  <div class="rounded-md shadow">
-                    <a routerLink="/auth" 
-                       class="w-full flex items-center justify-center px-8 py-3 border border-transparent 
-                              text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark 
-                              md:py-4 md:text-lg md:px-10">
-                      Get started
-                    </a>
-                  </div>
-                } @else {
-                  <div class="rounded-md shadow">
-                    <a routerLink="/dashboard" 
-                       class="w-full flex items-center justify-center px-8 py-3 border border-transparent 
-                              text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark 
-                              md:py-4 md:text-lg md:px-10">
-                      Go to Dashboard
-                    </a>
-                  </div>
-                }
-              </div>
-            </div>
-          </main>
-        </div>
+    <!-- Hero Section with Dark Theme -->
+    <div class="relative bg-gray-900 overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-gray-900"></div>
       </div>
-      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" 
-             src="assets/images/hero-recycling.jpg" 
-             alt="Recycling">
-      </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="py-12 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Features</h2>
-          <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            A better way to recycle
-          </p>
-        </div>
-
-        <div class="mt-10">
-          <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-            <!-- Feature 1 -->
-            <div class="relative">
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
-                <app-icon name="recycle" class="h-6 w-6"></app-icon>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Easy Collection</p>
-              <p class="mt-2 ml-16 text-base text-gray-500">
-                Schedule pickups at your convenience and let our certified collectors handle the rest.
-              </p>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+          <div class="mb-12 lg:mb-0 z-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
+              Transform Waste into
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">
+                Rewards
+              </span>
+            </h1>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+              Join the eco-revolution. Every piece of recycling counts towards a greener future 
+              and earns you points for amazing rewards.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a routerLink="/auth/register" 
+                 class="btn-primary px-8 py-4 rounded-lg text-white bg-emerald-500 hover:bg-emerald-400 
+                        transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25
+                        text-center relative overflow-hidden group">
+                <span class="relative z-10">Get Started</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-400 opacity-0 
+                           group-hover:opacity-100 transition-opacity"></div>
+              </a>
+              <a routerLink="/auth/login" 
+                 class="btn-secondary px-8 py-4 rounded-lg text-emerald-400 border-2 border-emerald-400/50 
+                        hover:border-emerald-400 hover:bg-emerald-400/10 transition-all text-center">
+                Sign In
+              </a>
             </div>
-
-            <!-- Feature 2 -->
-            <div class="relative">
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
-                <app-icon name="star" class="h-6 w-6"></app-icon>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Earn Rewards</p>
-              <p class="mt-2 ml-16 text-base text-gray-500">
-                Get points for every kilogram of recyclables and convert them into valuable rewards.
-              </p>
+          </div>
+          
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl 
+                        transform hover:scale-[1.02] transition-transform">
+              <img src="assets/images/Landing.png" alt="Recycling" 
+                   class="w-full rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
             </div>
-
-            <div class="relative">
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                <app-icon name="earth" class="h-6 w-6"></app-icon>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Track Impact</p>
-              <p class="mt-2 ml-16 text-base text-gray-500">
-                Monitor your environmental impact and see how your efforts make a difference.
-              </p>
-            </div>
-
-            <div class="relative">
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                <app-icon name="user" class="h-6 w-6"></app-icon>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Professional Collectors</p>
-              <p class="mt-2 ml-16 text-base text-gray-500">
-                Our certified collectors ensure proper handling and recycling of your materials.
-              </p>
+            
+            <!-- Floating Stats -->
+            <div class="absolute -bottom-6 -right-6 bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 
+                        shadow-xl border border-gray-700">
+              <p class="text-emerald-400 font-semibold">Join 1000+ eco-warriors</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CTA Section -->
-    <div class="bg-primary">
-      <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-          <span class="block">Ready to start recycling?</span>
-          <span class="block text-primary-light">Join RecycleHub today.</span>
-        </h2>
-        <p class="mt-4 text-lg leading-6 text-white opacity-90">
-          Make a difference in your community while earning rewards for your eco-friendly actions.
-        </p>
-        @if (!(isAuthenticated$ | async)) {
-          <a routerLink="/auth"
-             class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent 
-                    text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 sm:w-auto">
-            Get started
-          </a>
-        }
+    <!-- Features Section with Glass Effect -->
+    <div class="bg-gray-900 py-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.15),transparent)]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-white mb-4">How It Works</h2>
+          <p class="text-gray-400 text-lg">Simple steps to start your recycling journey</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step Cards with Glass Effect -->
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-400 rounded-2xl 
+                        blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+            <div class="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 
+                       border border-gray-700/50 h-full transform hover:scale-[1.02] transition-all">
+              <img src="assets/images/Jabitor.png" alt="Collect" 
+                   class="w-20 h-20 mx-auto mb-6 object-contain">
+              <h3 class="text-xl font-semibold text-white mb-3">Collect & Sort</h3>
+              <p class="text-gray-400">Gather your recyclables and sort them by category</p>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-400 rounded-2xl 
+                        blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+            <div class="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 
+                       border border-gray-700/50 h-full transform hover:scale-[1.02] transition-all">
+              <img src="assets/images/Car.png" alt="Schedule" 
+                   class="w-20 h-20 mx-auto mb-6 object-contain">
+              <h3 class="text-xl font-semibold text-white mb-3">Schedule Pickup</h3>
+              <p class="text-gray-400">Book a convenient time for collection</p>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-400 rounded-2xl 
+                        blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+            <div class="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 
+                       border border-gray-700/50 h-full transform hover:scale-[1.02] transition-all">
+              <img src="assets/images/Bean.png" alt="Earn" 
+                   class="w-20 h-20 mx-auto mb-6 object-contain">
+              <h3 class="text-xl font-semibold text-white mb-3">Earn Points</h3>
+              <p class="text-gray-400">Get rewarded for your environmental impact</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  `
-})
-export class HomeComponent {
-  isAuthenticated$ = this.authService.currentUser$;
 
-  constructor(private authService: AuthService) {}
-} 
+    <!-- Impact Stats Section -->
+    <div class="bg-gray-900 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(16,185,129,0.15),transparent)]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
+            <div class="text-4xl font-bold text-emerald-400 mb-2">1,234</div>
+            <div class="text-gray-400">Tons Recycled</div>
+          </div>
+          <div class="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
+            <div class="text-4xl font-bold text-emerald-400 mb-2">5,678</div>
+            <div class="text-gray-400">Active Members</div>
+          </div>
+          <div class="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
+            <div class="text-4xl font-bold text-emerald-400 mb-2">90%</div>
+            <div class="text-gray-400">Waste Reduction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gray-900 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-emerald-600/20 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center relative">
+        <h2 class="text-3xl font-bold text-white mb-8">Ready to Make a Difference?</h2>
+        <div class="inline-flex flex-col sm:flex-row gap-4 justify-center">
+          <a routerLink="/auth/register" 
+             class="px-8 py-4 rounded-lg text-white bg-emerald-500 hover:bg-emerald-400 
+                    transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25">
+            Join Now
+          </a>
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    :host {
+      display: block;
+      background-color: #111827;
+    }
+    
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+  `]
+})
+export class HomeComponent {} 

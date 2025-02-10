@@ -5,7 +5,6 @@ export interface Material {
   icon: string;
 }
 
-// Single export of MATERIALS
 export const MATERIALS: Material[] = [
   { id: 'plastic', name: 'Plastic', pointsPerKg: 2, icon: 'plastic' },
   { id: 'glass', name: 'Glass', pointsPerKg: 1, icon: 'glass' },

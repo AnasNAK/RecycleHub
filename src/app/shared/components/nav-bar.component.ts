@@ -117,4 +117,8 @@ export class NavBarComponent {
   logout(): void {
     this.authService.logout();
   }
+
+
+
+
 } 

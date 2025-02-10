@@ -258,7 +258,9 @@ export class NewCollectionComponent implements OnInit {
         notes: this.collectionForm.get('notes')?.value || '',
         status: 'pending' as const,
         createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
+        updatedAt: new Date().toISOString(),
+        type: this.materials.value[0].type,
+        weight: this.materials.value[0].weight
       };
 
       this.collectionService.createCollection(collection).subscribe({
