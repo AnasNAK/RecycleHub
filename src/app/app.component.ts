@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NotificationComponent } from './shared/components/notification.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet, NotificationComponent],
+  template: `
+    <app-notification></app-notification>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent {
   title = 'RecycleHub';

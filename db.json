@@ -1,0 +1,172 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@recyclehub.com",
+      "password": "admin123",
+      "firstName": "Admin",
+      "lastName": "nak",
+      "address": "123 Admin St",
+      "city": "safi",
+      "phone": "0601992205",
+      "dateOfBirth": "1990-01-01",
+      "role": "collector",
+      "points": 0,
+      "isActive": true
+    },
+    {
+      "id": "8d22",
+      "firstName": "Itaque ad et obcaeca",
+      "lastName": "Odio sit omnis volup",
+      "email": "seregij@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (222) 923-7574",
+      "address": "Nobis fugiat ullamc",
+      "city": "Sed et sint velit od",
+      "dateOfBirth": "2012-07-06",
+      "role": "user",
+      "isActive": false,
+      "points": 0
+    },
+    {
+      "id": "060e",
+      "firstName": "Sint est quia dolor",
+      "lastName": "Architecto et except",
+      "email": "huvomihi@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (135) 816-4402",
+      "address": "Voluptatem necessit",
+      "city": "Neque nihil in paria",
+      "dateOfBirth": "1999-01-09",
+      "role": "user",
+      "isActive": true,
+      "points": 0
+    },
+    {
+      "id": "69ae",
+      "firstName": "Anas",
+      "lastName": "Anas",
+      "email": "anasc00ding@gmail.com",
+      "password": "anasnakhli",
+      "phone": "0601992205",
+      "address": "N10 ,Bloc 40 ,Qu Riyad",
+      "city": "SAFI",
+      "dateOfBirth": "2025-02-14",
+      "role": "user",
+      "isActive": true,
+      "points": 0
+    }
+  ],
+  "collections": [
+    {
+      "id": "e4de",
+      "userId": "1",
+      "materials": [
+        {
+          "type": "paper",
+          "weight": 2
+        }
+      ],
+      "totalWeight": 2,
+      "address": "Cupiditate officiis ",
+      "city": "safi",
+      "collectionDate": "2015-07-01",
+      "timeSlot": "11:00",
+      "notes": "Qui ab eius ea conse",
+      "status": "occupied",
+      "createdAt": "2025-02-10T00:58:38.216Z",
+      "updatedAt": "2025-02-10T00:58:38.216Z",
+      "collectorId": "1"
+    },
+    {
+      "id": "c4c1",
+      "userId": "1",
+      "materials": [
+        {
+          "type": "paper",
+          "weight": 2
+        },
+        {
+          "type": "plastic",
+          "weight": 8
+        }
+      ],
+      "totalWeight": 10,
+      "address": "Totam enim quo enim ",
+      "city": "safi",
+      "collectionDate": "1999-10-17",
+      "timeSlot": "15:00",
+      "notes": "Iure in saepe culpa",
+      "status": "pending",
+      "createdAt": "2025-02-10T01:02:15.959Z",
+      "updatedAt": "2025-02-10T01:02:15.959Z"
+    },
+    {
+      "id": "2758",
+      "userId": "69ae",
+      "materials": [
+        {
+          "type": "glass",
+          "weight": 10
+        }
+      ],
+      "totalWeight": 10,
+      "address": "Ad mollitia consecte",
+      "city": "SAFI",
+      "collectionDate": "1980-07-23",
+      "timeSlot": "10:00",
+      "notes": "Ipsa ut culpa et id",
+      "status": "occupied",
+      "createdAt": "2025-02-10T01:03:19.832Z",
+      "updatedAt": "2025-02-10T01:03:19.832Z",
+      "collectorId": "69ae"
+    },
+    {
+      "id": "6f00",
+      "userId": "8d22",
+      "materials": [
+        {
+          "type": "metal",
+          "weight": 2
+        }
+      ],
+      "totalWeight": 2,
+      "address": "Laborum Reiciendis ",
+      "city": "Sed et sint velit od",
+      "collectionDate": "2025-02-10",
+      "timeSlot": "09:00",
+      "notes": "Elit vero est et e",
+      "status": "occupied",
+      "createdAt": "2025-02-10T01:27:31.376Z",
+      "updatedAt": "2025-02-10T01:27:31.376Z",
+      "collectorId": "1"
+    }
+  ],
+  "points_transactions": [],
+  "materials": [
+    {
+      "id": "plastic",
+      "name": "Plastic",
+      "pointsPerKg": 2,
+      "icon": "plastic-icon"
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "pointsPerKg": 1,
+      "icon": "glass-icon"
+    },
+    {
+      "id": "paper",
+      "name": "Paper",
+      "pointsPerKg": 1,
+      "icon": "paper-icon"
+    },
+    {
+      "id": "metal",
+      "name": "Metal",
+      "pointsPerKg": 5,
+      "icon": "metal-icon"
+    }
+  ]
+}
